@@ -8,7 +8,6 @@ namespace BattleCalculator.Models
 {
     public abstract class BaseRace
     {
-        double Speed { get; set; }
         double Health { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BattleCalculator.Models.CombatUnits;
+using BattleCalculator.Models.Elfs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,21 +8,26 @@ using System.Threading.Tasks;
 
 namespace BattleCalculator.Factories
 {
-    public class ElfFactory : AbstractRaceFactory
+    public class ElfFactory : AbstractFactory
     {
         public override Cavalry[] CreateCavalry(int count)
         {
-            throw new NotImplementedException();
+            return new ElfCavalry[count];
         }
 
         public override Infantry[] CreateInfantry(int count)
         {
-            throw new NotImplementedException();
+            return new ElfInfantry[count];
         }
 
         public override SiegeWeapon[] CreateSiegeWeapon(int count)
         {
-            throw new NotImplementedException();
+            return new ElfSiegeWeapon[count];
+        }
+
+        public override string ToString()
+        {
+            return "Армия эльфов"; //#TODO всем остальным фабрикам (кроме абстрактной)
         }
     }
 }

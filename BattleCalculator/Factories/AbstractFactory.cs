@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BattleCalculator.Factories
 {
-    public abstract class AbstractRaceFactory
+    public abstract class AbstractFactory
     {
         public abstract Infantry[] CreateInfantry(int count);
         public abstract Cavalry[] CreateCavalry(int count);

@@ -8,5 +8,9 @@ namespace BattleCalculator.Models.CombatUnits
 {
     public abstract class Cavalry : CombatUnit
     {
+        public Cavalry()
+        {
+            Cost = Parameters.BaseCavalryCost;
+        }
     }
 }

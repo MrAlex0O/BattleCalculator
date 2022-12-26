@@ -1,4 +1,5 @@
 ﻿using BattleCalculator.Models.CombatUnits;
+using BattleCalculator.Models.Dwarfes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace BattleCalculator.Factories
 {
-    public class DwarfFactory : AbstractRaceFactory
+    public class DwarfFactory : AbstractFactory
     {
         public override Cavalry[] CreateCavalry(int count)
         {
-            throw new NotImplementedException();
+            return new DwarfCavalry[count];
         }
 
         public override Infantry[] CreateInfantry(int count)
         {
-            throw new NotImplementedException();
+            return new DwarfInfantry[count];
         }
 
         public override SiegeWeapon[] CreateSiegeWeapon(int count)
         {
-            throw new NotImplementedException();
+            return new DwarfSiegeWeapon[count];
         }
     }
 }

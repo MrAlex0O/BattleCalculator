@@ -1,0 +1,17 @@
+D:\Projects\BattleCalculator\BattleCalculator\bin\Debug\net6.0-windows\BattleCalculator.exe
+D:\Projects\BattleCalculator\BattleCalculator\bin\Debug\net6.0-windows\BattleCalculator.deps.json
+D:\Projects\BattleCalculator\BattleCalculator\bin\Debug\net6.0-windows\BattleCalculator.runtimeconfig.json
+D:\Projects\BattleCalculator\BattleCalculator\bin\Debug\net6.0-windows\BattleCalculator.dll
+D:\Projects\BattleCalculator\BattleCalculator\bin\Debug\net6.0-windows\BattleCalculator.pdb
+D:\Projects\BattleCalculator\BattleCalculator\obj\Debug\net6.0-windows\BattleCalculator.csproj.AssemblyReference.cache
+D:\Projects\BattleCalculator\BattleCalculator\obj\Debug\net6.0-windows\BattleCalculator.Form1.resources
+D:\Projects\BattleCalculator\BattleCalculator\obj\Debug\net6.0-windows\BattleCalculator.csproj.GenerateResource.cache
+D:\Projects\BattleCalculator\BattleCalculator\obj\Debug\net6.0-windows\BattleCalculator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\BattleCalculator\BattleCalculator\obj\Debug\net6.0-windows\BattleCalculator.AssemblyInfoInputs.cache
+D:\Projects\BattleCalculator\BattleCalculator\obj\Debug\net6.0-windows\BattleCalculator.AssemblyInfo.cs
+D:\Projects\BattleCalculator\BattleCalculator\obj\Debug\net6.0-windows\BattleCalculator.csproj.CoreCompileInputs.cache
+D:\Projects\BattleCalculator\BattleCalculator\obj\Debug\net6.0-windows\BattleCalculator.dll
+D:\Projects\BattleCalculator\BattleCalculator\obj\Debug\net6.0-windows\refint\BattleCalculator.dll
+D:\Projects\BattleCalculator\BattleCalculator\obj\Debug\net6.0-windows\BattleCalculator.pdb
+D:\Projects\BattleCalculator\BattleCalculator\obj\Debug\net6.0-windows\BattleCalculator.genruntimeconfig.cache
+D:\Projects\BattleCalculator\BattleCalculator\obj\Debug\net6.0-windows\ref\BattleCalculator.dll

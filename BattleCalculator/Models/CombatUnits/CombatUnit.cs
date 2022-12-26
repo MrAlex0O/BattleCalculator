@@ -8,9 +8,8 @@ namespace BattleCalculator.Models.CombatUnits
 {
     public abstract class CombatUnit
     {
-        int Cost { get; set; }
-        double Damage { get; set; }
-        double Defence { get; set; }
-        double Movement { get; set; }
+        public int Cost { get; set; }
+        public double Damage { get; set; }
+        public double Defence { get; set; }
     }
 }

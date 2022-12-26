@@ -8,5 +8,9 @@ namespace BattleCalculator.Models.CombatUnits
 {
     public abstract class SiegeWeapon : CombatUnit
     {
+        public SiegeWeapon()
+        {
+            Cost = Parameters.BaseSiegeWeaponCost;
+        }
     }
 }
