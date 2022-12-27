@@ -24,5 +24,9 @@ namespace BattleCalculator.Factories
         {
             return new HumanSiegeWeapon[count];
         }
+        public override string ToString()
+        {
+            return "Армия людей";
+        }
     }
 }

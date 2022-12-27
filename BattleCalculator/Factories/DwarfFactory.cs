@@ -24,5 +24,9 @@ namespace BattleCalculator.Factories
         {
             return new DwarfSiegeWeapon[count];
         }
+        public override string ToString()
+        {
+            return "Армия гномов";
+        }
     }
 }

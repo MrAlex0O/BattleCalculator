@@ -27,7 +27,7 @@ namespace BattleCalculator.Factories
 
         public override string ToString()
         {
-            return "Армия эльфов"; //#TODO всем остальным фабрикам (кроме абстрактной)
+            return "Армия эльфов"; //#TODO 
         }
     }
 }

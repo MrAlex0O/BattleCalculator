@@ -11,5 +11,10 @@ namespace BattleCalculator.Models.CombatUnits
         public int Cost { get; set; }
         public double Damage { get; set; }
         public double Defence { get; set; }
+        public double Health { get; set; }
+        public CombatUnit() //added this metod
+        {
+            Health = BaseRace.Health;
+        }
     }
 }
