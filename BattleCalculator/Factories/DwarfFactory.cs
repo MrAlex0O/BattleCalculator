@@ -12,21 +12,36 @@ namespace BattleCalculator.Factories
     {
         public override Cavalry[] CreateCavalry(int count)
         {
-            return new DwarfCavalry[count];
+            DwarfCavalry[] army = new DwarfCavalry[count];
+            for (int i = 0; i < count; i++)
+            {
+                army[i] = new DwarfCavalry();
+            }
+            return army;
         }
 
         public override Infantry[] CreateInfantry(int count)
         {
-            return new DwarfInfantry[count];
+            DwarfInfantry[] army = new DwarfInfantry[count];
+            for (int i = 0; i < count; i++)
+            {
+                army[i] = new DwarfInfantry();
+            }
+            return army;
         }
 
         public override SiegeWeapon[] CreateSiegeWeapon(int count)
         {
-            return new DwarfSiegeWeapon[count];
+            DwarfSiegeWeapon[] army = new DwarfSiegeWeapon[count];
+            for (int i = 0; i < count; i++)
+            {
+                army[i] = new DwarfSiegeWeapon();
+            }
+            return army;
         }
         public override string ToString()
         {
-            return "Армия гномов";
+            return "Войско гномов";
         }
     }
 }

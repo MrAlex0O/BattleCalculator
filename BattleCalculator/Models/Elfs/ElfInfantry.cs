@@ -13,7 +13,7 @@ namespace BattleCalculator.Models.Elfs
         {
             Health = Parameters.ElfInfantry.Health;
             Damage = Parameters.ElfInfantry.Damage;
-            Defence = Parameters.ElfInfantry.Defence;//#TODO ОБРАЗЕЦ
+            Defence = Parameters.ElfInfantry.Defence;
         }
     }
 }

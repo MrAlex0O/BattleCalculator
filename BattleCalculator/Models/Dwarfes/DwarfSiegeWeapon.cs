@@ -9,5 +9,11 @@ namespace BattleCalculator.Models.Dwarfes
 {
     public class DwarfSiegeWeapon : SiegeWeapon
     {
+        public DwarfSiegeWeapon()
+        {
+            Health = Parameters.DwarfSiegeWeapon.Health;
+            Damage = Parameters.DwarfSiegeWeapon.Damage;
+            Defence = Parameters.DwarfSiegeWeapon.Defence;
+        }
     }
 }

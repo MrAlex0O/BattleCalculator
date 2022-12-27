@@ -9,5 +9,11 @@ namespace BattleCalculator.Models.Dwarfes
 {
     public class DwarfCavalry : Cavalry
     {
+        public DwarfCavalry()
+        {
+            Health = Parameters.DwarfCavalry.Health;
+            Damage = Parameters.DwarfCavalry.Damage;
+            Defence = Parameters.DwarfCavalry.Defence;
+        }
     }
 }

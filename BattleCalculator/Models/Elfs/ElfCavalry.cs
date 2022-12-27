@@ -11,7 +11,9 @@ namespace BattleCalculator.Models.Elfs
     {
         public ElfCavalry()
         {
-
+            Health = Parameters.ElfCavalry.Health;
+            Damage = Parameters.ElfCavalry.Damage;
+            Defence = Parameters.ElfCavalry.Defence;
         }
     }
 }

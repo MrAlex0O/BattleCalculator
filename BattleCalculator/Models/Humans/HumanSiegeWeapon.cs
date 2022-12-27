@@ -9,5 +9,11 @@ namespace BattleCalculator.Models.Humans
 {
     public class HumanSiegeWeapon : SiegeWeapon
     {
+        public HumanSiegeWeapon()
+        {
+            Health = Parameters.HumanSiegeWeapon.Health;
+            Damage = Parameters.HumanSiegeWeapon.Damage;
+            Defence = Parameters.HumanSiegeWeapon.Defence;
+        }
     }
 }

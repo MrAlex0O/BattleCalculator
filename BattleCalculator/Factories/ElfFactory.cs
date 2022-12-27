@@ -42,7 +42,7 @@ namespace BattleCalculator.Factories
 
         public override string ToString()
         {
-            return "Армия эльфов";
+            return "Войско эльфов";
         }
     }
 }

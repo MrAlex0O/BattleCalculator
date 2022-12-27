@@ -12,21 +12,36 @@ namespace BattleCalculator.Factories
     {
         public override Cavalry[] CreateCavalry(int count)
         {
-            return new HumanCavalry[count];
+            HumanCavalry[] army = new HumanCavalry[count];
+            for (int i = 0; i < count; i++)
+            {
+                army[i] = new HumanCavalry();
+            }
+            return army;
         }
 
         public override Infantry[] CreateInfantry(int count)
         {
-            return new HumanInfantry[count];
+            HumanInfantry[] army = new HumanInfantry[count];
+            for (int i = 0; i < count; i++)
+            {
+                army[i] = new HumanInfantry();
+            }
+            return army;
         }
 
         public override SiegeWeapon[] CreateSiegeWeapon(int count)
         {
-            return new HumanSiegeWeapon[count];
+            HumanSiegeWeapon[] army = new HumanSiegeWeapon[count];
+            for (int i = 0; i < count; i++)
+            {
+                army[i] = new HumanSiegeWeapon();
+            }
+            return army;
         }
         public override string ToString()
         {
-            return "Армия людей";
+            return "Войско людей";
         }
     }
 }

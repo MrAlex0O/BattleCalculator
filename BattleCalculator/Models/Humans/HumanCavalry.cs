@@ -9,5 +9,11 @@ namespace BattleCalculator.Models.Humans
 {
     public class HumanCavalry : Cavalry
     {
+        public HumanCavalry()
+        {
+            Health = Parameters.HumanCavalry.Health;
+            Damage = Parameters.HumanCavalry.Damage;
+            Defence = Parameters.HumanCavalry.Defence;
+        }
     }
 }

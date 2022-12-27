@@ -8,7 +8,7 @@ namespace BattleCalculator
         {
             InitializeComponent();
         }
-
+        int totalCostA = 0, totalCostB = 0;
         private void Form1_Load(object sender, EventArgs e)
         {
             AArmyListBox.Items.Add(new ElfFactory());
@@ -49,22 +49,22 @@ namespace BattleCalculator
             int infantryCost = infantryCount * Parameters.BaseInfantryCost;
             int cavalryCost = cavalryCount * Parameters.BaseCavalryCost;
             int siegeWeaponsCost = siegeWeaponsCount * Parameters.BaseSiegeWeaponCost;
-            int totalCost = infantryCost + cavalryCost + siegeWeaponsCost;
+            totalCostA = infantryCost + cavalryCost + siegeWeaponsCost;
 
-            string result = $@"Пехоты - {infantryCount}
-Кавалерии - {cavalryCount}
-Осадных орудий - {siegeWeaponsCount}
-Использовано очков - {totalCost} из {Parameters.BaseArmyCost}" + Environment.NewLine;
+            string result = $@"Пехоты - {infantryCount}" + Environment.NewLine +
+$@"Кавалерии - {cavalryCount}" + Environment.NewLine +
+$@"Осадных орудий - {siegeWeaponsCount}" + Environment.NewLine +
+$@"Использовано очков - {totalCostA} из {Parameters.BaseArmyCost}" + Environment.NewLine;
 
-            if (totalCost == Parameters.BaseArmyCost)
+            if (totalCostA == Parameters.BaseArmyCost)
             {
                 result += "Ваша армия идеально укомплектована, милорд";
             }
-            if (totalCost < Parameters.BaseArmyCost)
+            if (totalCostA < Parameters.BaseArmyCost)
             {
                 result += "Ваша армия может быть сильнее, милорд";
             }
-            if (totalCost > Parameters.BaseArmyCost)
+            if (totalCostA > Parameters.BaseArmyCost)
             {
                 result += "У нас нет средств для такой сильной армии, милорд";
             }
@@ -79,22 +79,22 @@ namespace BattleCalculator
             int infantryCost = infantryCount * Parameters.BaseInfantryCost;
             int cavalryCost = cavalryCount * Parameters.BaseCavalryCost;
             int siegeWeaponsCost = siegeWeaponsCount * Parameters.BaseSiegeWeaponCost;
-            int totalCost = infantryCost + cavalryCost + siegeWeaponsCost;
+            totalCostB = infantryCost + cavalryCost + siegeWeaponsCost;
 
-            string result = $@"Пехоты - {infantryCount}
-Кавалерии - {cavalryCount}
-Осадных орудий - {siegeWeaponsCount}
-Использовано очков - {totalCost} из {Parameters.BaseArmyCost}" + Environment.NewLine;
+            string result = $@"Пехоты - {infantryCount}" + Environment.NewLine +
+$@"Кавалерии - {cavalryCount}" + Environment.NewLine +
+$@"Осадных орудий - {siegeWeaponsCount}" + Environment.NewLine +
+$@"Использовано очков - {totalCostB} из {Parameters.BaseArmyCost}" + Environment.NewLine;
 
-            if (totalCost == Parameters.BaseArmyCost)
+            if (totalCostB == Parameters.BaseArmyCost)
             {
                 result += "Ваша армия идеально укомплектована, милорд";
             }
-            if (totalCost < Parameters.BaseArmyCost)
+            if (totalCostB < Parameters.BaseArmyCost)
             {
                 result += "Ваша армия может быть сильнее, милорд";
             }
-            if (totalCost > Parameters.BaseArmyCost)
+            if (totalCostB > Parameters.BaseArmyCost)
             {
                 result += "У нас нет средств для такой сильной армии, милорд";
             }
@@ -103,11 +103,19 @@ namespace BattleCalculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //TODO
+            if (totalCostA > Parameters.BaseArmyCost)
+            {
+                MessageBox.Show($"Войско игрока А превышает установленный лимит очковой стоимости {Parameters.BaseArmyCost}");
+                return;
+            }if (totalCostB > Parameters.BaseArmyCost)
+            {
+                MessageBox.Show($"Войско игрока Б превышает установленный лимит очковой стоимости {Parameters.BaseArmyCost}");
+                return;
+            }
             BattleCalculator calculator = new BattleCalculator();
             calculator.InitArmyA((AbstractFactory)AArmyListBox.SelectedItem, AInfantryTrackBar.Value, ACavalryTrackBar.Value, ASiegeWeaponsTrackBar.Value);  //не хватает аргумента
             calculator.InitArmyB((AbstractFactory)BArmyListBox.SelectedItem, BInfantryTrackBar.Value, BCavalryTrackBar.Value, BSiegeWeaponsTrackBar.Value);  //?
-            MessageBox.Show(calculator.Battle());        
+            MessageBox.Show(calculator.Battle());
         }
 
     }
