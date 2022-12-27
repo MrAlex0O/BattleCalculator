@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace BattleCalculator.Models.Elfs
 {
-    internal class ElfCavalry : Cavalry
+    public class ElfCavalry : Cavalry
     {
+        public ElfCavalry()
+        {
+
+        }
     }
 }

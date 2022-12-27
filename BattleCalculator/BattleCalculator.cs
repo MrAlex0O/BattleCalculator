@@ -1,5 +1,6 @@
 ﻿using BattleCalculator.Factories;
 using BattleCalculator.Models.CombatUnits;
+using BattleCalculator.Models.Elfs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,15 +14,14 @@ namespace BattleCalculator
         Infantry[] AInfantry, BInfantry;
         Cavalry[] ACavalry, BCavalry;
         SiegeWeapon[] ASiegeWeapons, BSiegeWeapons;
-        public void InitArmyA<T>(AbstractFactory factory, int infantryCount, int cavalryCount, int siegeWeaponsCount)
+        public void InitArmyA(AbstractFactory factory, int infantryCount, int cavalryCount, int siegeWeaponsCount)
         {
             AInfantry = factory.CreateInfantry(infantryCount);
             ACavalry = factory.CreateCavalry(cavalryCount);
             ASiegeWeapons = factory.CreateSiegeWeapon(siegeWeaponsCount);
         }
-        public void InitArmyB<T>(AbstractFactory factory, int infantryCount, int cavalryCount, int siegeWeaponCount)
+        public void InitArmyB(AbstractFactory factory, int infantryCount, int cavalryCount, int siegeWeaponCount)
         {
-            //#TODO
             BInfantry = factory.CreateInfantry(infantryCount);
             BCavalry = factory.CreateCavalry(cavalryCount);
             BSiegeWeapons = factory.CreateSiegeWeapon(siegeWeaponCount);
@@ -30,12 +30,11 @@ namespace BattleCalculator
         public double CalculateArmyDamage(Infantry[] infantry, Cavalry[] cavalry, SiegeWeapon[] siegeWeapon)
         {
             double infantryPower = 0;
-            foreach(var item in infantry)
+            foreach (var item in infantry)
             {
                 infantryPower += item.Damage;
             }
 
-            // #TODO
             double cavalryPower = 0;
             foreach (var item in cavalry)
             {
@@ -48,17 +47,16 @@ namespace BattleCalculator
                 siegeWeaponPower += item.Damage;
             }
 
-            double totalDamage = infantryPower+cavalryPower+siegeWeaponPower; 
+            double totalDamage = infantryPower + cavalryPower + siegeWeaponPower;
             return totalDamage;
         }
 
         public double CalculateArmyHealth(Infantry[] infantry, Cavalry[] cavalry, SiegeWeapon[] siegeWeapon)
         {
-            //#TODO
             double infantryHealth = 0;
             foreach (var item in infantry)
             {
-                infantryHealth += item.Health;  //added method to CombatUnits
+                infantryHealth += item.Health;
             }
 
             double cavalryHealth = 0;
@@ -72,7 +70,7 @@ namespace BattleCalculator
             {
                 siegeWeaponHealth += item.Health;
             }
-            double totalHealth = infantryHealth+cavalryHealth+siegeWeaponHealth;
+            double totalHealth = infantryHealth + cavalryHealth + siegeWeaponHealth;
             return totalHealth;
         }
 
@@ -99,16 +97,41 @@ namespace BattleCalculator
             double totalDefence = infantryDefence + cavalryDefence + siegeWeaponDefence;
             return totalDefence;
         }
-        public void Battle()
+        public string Battle()
         {
-            /*
-            1 = totalDMGA <>? totalHPB
-            2 = totalDMGB <>? totalHPA
-            if (1) then ... потери Б
-            if (2) then ... потери А
-            if (1+2) then ... ничья (все померли)
-            if (не1+не2) then ... ничья (все живые)
-            */
+            double healthA, damageA, defenceA;
+            double healthB, damageB, defenceB;
+            healthA = CalculateArmyHealth(AInfantry, ACavalry, ASiegeWeapons);
+            healthB = CalculateArmyHealth(BInfantry, BCavalry, BSiegeWeapons);
+            damageA = CalculateArmyDamage(AInfantry, ACavalry, ASiegeWeapons);
+            damageB = CalculateArmyDamage(BInfantry, BCavalry, BSiegeWeapons);
+            defenceA = CalculateArmyDefence(AInfantry, ACavalry, ASiegeWeapons);
+            defenceB = CalculateArmyDefence(BInfantry, BCavalry, BSiegeWeapons);
+
+            healthA += defenceA * Parameters.DefenceCoeff;
+            healthB += defenceB * Parameters.DefenceCoeff;
+
+            bool AbitesB = damageA > healthB ? true : false;
+            bool BbitesA = damageB > healthA ? true : false;
+
+            string res = "";
+            if (AbitesB && BbitesA)
+            {
+                res = "Ничья, обе армии разгромлены";
+            }
+            if (!AbitesB && !BbitesA)
+            {
+                res = "Ничья, армии разошлись с миром";
+            }
+            if (AbitesB && !BbitesA)
+            {
+                res = "Уверенная победа армии А";
+            }
+            if (!AbitesB && BbitesA)
+            {
+                res = "Уверенная победа армии Б";
+            }
+            return res;
         }
 
     }

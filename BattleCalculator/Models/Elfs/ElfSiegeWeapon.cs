@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BattleCalculator.Models.Elfs
 {
-    internal class ElfSiegeWeapon : SiegeWeapon
+    public class ElfSiegeWeapon : SiegeWeapon
     {
     }
 }

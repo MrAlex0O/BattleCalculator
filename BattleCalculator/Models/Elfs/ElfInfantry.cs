@@ -9,5 +9,11 @@ namespace BattleCalculator.Models.Elfs
 {
     public class ElfInfantry : Infantry
     {
+        public ElfInfantry()
+        {
+            Health = Parameters.ElfInfantry.Health;
+            Damage = Parameters.ElfInfantry.Damage;
+            Defence = Parameters.ElfInfantry.Defence;//#TODO ОБРАЗЕЦ
+        }
     }
 }

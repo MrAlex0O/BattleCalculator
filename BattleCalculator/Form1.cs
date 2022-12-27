@@ -17,6 +17,8 @@ namespace BattleCalculator
             BArmyListBox.Items.Add(new ElfFactory());
             BArmyListBox.Items.Add(new DwarfFactory());
             BArmyListBox.Items.Add(new HumanFactory());
+            AArmyListBox.SelectedIndex = 0;
+            BArmyListBox.SelectedIndex = 0;
             AInfantryTrackBar.Minimum = 0;
             ACavalryTrackBar.Minimum = 0;
             ASiegeWeaponsTrackBar.Minimum = 0;
@@ -99,12 +101,13 @@ namespace BattleCalculator
             BArmyTextBox.Text = result;
         }
 
-            private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             //TODO
             BattleCalculator calculator = new BattleCalculator();
-            calculator.InitArmyA(AInfantryTrackBar.Value, ACavalryTrackBar.Value, ASiegeWeaponsTrackBar.Value);  //не хватает аргумента
-            calculator.InitArmyB(BInfantryTrackBar.Value, BCavalryTrackBar.Value, BSiegeWeaponsTrackBar.Value);  //?
+            calculator.InitArmyA((AbstractFactory)AArmyListBox.SelectedItem, AInfantryTrackBar.Value, ACavalryTrackBar.Value, ASiegeWeaponsTrackBar.Value);  //не хватает аргумента
+            calculator.InitArmyB((AbstractFactory)BArmyListBox.SelectedItem, BInfantryTrackBar.Value, BCavalryTrackBar.Value, BSiegeWeaponsTrackBar.Value);  //?
+            MessageBox.Show(calculator.Battle());        
         }
 
     }
